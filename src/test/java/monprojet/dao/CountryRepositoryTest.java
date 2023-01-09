@@ -43,4 +43,26 @@ public class CountryRepositoryTest {
         assertEquals(combienDePaysDansLeJeuDeTest, nombre, "On doit trouver 4 pays" );
     }
 
+    @Test
+    @Sql("test-data.sql")
+    void populationPaysTest(){
+        log.info("On compte les habitants du pays avec id_country 1. Il n'y a que Paris comme pays avec cet id_country. Paris a 12 millions d'habitants.");
+        assertEquals( 12 , countryDAO.populationPays(1));
+
+    }
+
+    @Test
+    @Sql("test-data.sql")
+    void listePopulationTest(){
+        assertEquals(3, countryDAO.listePopulation().size());
+    }
+
+    @Test
+    @Sql("test-data.sql")
+    void listePopulationTest2(){
+        assertEquals(12, countryDAO.listePopulation().get(0).getPop());
+    }
+
+
+
 }

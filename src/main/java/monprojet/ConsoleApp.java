@@ -59,5 +59,7 @@ public class ConsoleApp implements CommandLineRunner {
     public static void tapezEnterPourContinuer() throws Exception {
         System.out.println("Tapez \"ENTER\" pour continuer...");
         System.in.read();
+
+
     }
 }
